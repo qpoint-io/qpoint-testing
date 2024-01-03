@@ -1,0 +1,29 @@
+{
+  "name": "@qpoint/testing",
+  "version": "0.0.1",
+  "description": "A suite of testing utilitiess for QPoint middleware.",
+  "author": "Jon Friesen <jon@qpoint.io>",
+  "homepage": "https://github.com/qpoint-io/qpoint-testing#readme",
+  "license": "Apache-2.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20231218.0",
+    "htmlrewriter": "^0.0.4",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.1"
+  },
+  "dependencies": {
+    "@qpoint/router": "^0.2.1"
+  }
+}
