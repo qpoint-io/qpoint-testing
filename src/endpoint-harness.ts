@@ -1,10 +1,10 @@
-import Router, { Context } from '@qpoint/router';
+import Endpoint, { Context } from '@qpoint/endpoint';
 import { Queue } from './queue';
 import '@qpoint/htmlrewriter';
 
 /**
- * The `EndpointHarness` class is designed for testing Qpoint middleware. It features a router
- * instance from '@qpoint/router' to route requests and a queue to track and manage background
+ * The `EndpointHarness` class is designed for testing Qpoint middleware. It features a endpoint
+ * instance from '@qpoint/endpoint' to route requests and a queue to track and manage background
  * asynchronous tasks, ensuring their completion before moving forward.
  *
  * The class's primary functionalities include adding middleware using the `use()` method,
@@ -28,14 +28,14 @@ import '@qpoint/htmlrewriter';
  * ```
  */
 export class EndpointHarness {
-  endpoint: Router;
+  endpoint: Endpoint;
   req: Request;
   ctx: ExecutionContext;
   queue: Queue;
   reqCtx: Context;
 
   constructor() {
-    this.endpoint = new Router();
+    this.endpoint = new Endpoint();
     this.req = new Request('http://example.com');
     this.queue = new Queue();
     this.ctx = {

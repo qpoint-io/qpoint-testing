@@ -23,7 +23,7 @@
     "vitest": "^1.1.1"
   },
   "dependencies": {
-    "@qpoint/router": "^0.2.1",
+    "@qpoint/endpoint": "^0.0.1",
     "@qpoint/htmlrewriter": "^0.0.1"
   }
 }

@@ -1,9 +1,9 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import { EndpointHarness } from '../src/endpoint-harness';
 import { Queue } from '../src/queue';
-import Router, { Context } from '@qpoint/router';
+import Endpoint, { Context } from '@qpoint/endpoint';
 
-vi.mock('@qpoint/router');
+vi.mock('@qpoint/endpoint');
 vi.mock('htmlrewriter');
 vi.mock('./queue');
 
@@ -14,7 +14,7 @@ describe('EndpointHarness', () => {
 
   it('should initialize with default values', () => {
     const harness = new EndpointHarness();
-    expect(harness.endpoint).toBeInstanceOf(Router);
+    expect(harness.endpoint).toBeInstanceOf(Endpoint);
     expect(harness.req).toBeInstanceOf(Request);
     expect(harness.queue).toBeInstanceOf(Queue);
     expect(harness.ctx).toBeDefined();
