@@ -1,8 +1,6 @@
 import Router, { Context } from '@qpoint/router';
-import { HTMLRewriter } from 'htmlrewriter';
 import { Queue } from './queue';
-
-(globalThis as any).HTMLRewriter = HTMLRewriter;
+import '@qpoint/htmlrewriter';
 
 /**
  * The `EndpointHarness` class is designed for testing Qpoint middleware. It features a router

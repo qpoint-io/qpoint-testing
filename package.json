@@ -24,6 +24,6 @@
   },
   "dependencies": {
     "@qpoint/router": "^0.2.1",
-    "htmlrewriter": "^0.0.4"
+    "@qpoint/htmlrewriter": "^0.0.1"
   }
 }
