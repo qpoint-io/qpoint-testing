@@ -1,6 +1,6 @@
 {
   "name": "@qpoint/testing",
-  "version": "0.0.7",
+  "version": "0.0.0",
   "description": "A suite of testing utilitiess for QPoint middleware.",
   "author": "Jon Friesen <jon@qpoint.io>",
   "homepage": "https://github.com/qpoint-io/qpoint-testing#readme",
