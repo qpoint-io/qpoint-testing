@@ -47,12 +47,6 @@ export class EndpointHarness {
       passThroughOnException: () => { }
     };
     this.reqCtx = new Context(this.req, {}, this.ctx, {});
-
-    // extract the context reference
-    this.endpoint.use((ctx: Context, next: Function) => {
-      this.reqCtx = ctx;
-      next();
-    });
   }
 
   use(fn: Function): this {
@@ -66,12 +60,18 @@ export class EndpointHarness {
     const defaultEnv = env || {};
     const defaultCtx = ctx || this.ctx
 
+    // extract the final context reference
+    this.endpoint.use(async (ctx: Context, next: Function) => {
+      this.reqCtx = ctx;
+      await next();
+    });
+
     return this.endpoint.fetch(defaultRequest, defaultEnv, defaultCtx);
   }
 
   async onAfterComplete(fn: Function) {
     await this.queue.allComplete();
-    fn(this.reqCtx);
+    await fn(this.reqCtx);
   }
 }
 
